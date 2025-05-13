@@ -12,6 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Entity
+@Table(name = "users") // <- nombre de tabla distinto de "user"
 public class User implements UserDetails {
 
     @Id
@@ -71,4 +72,17 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
 }
